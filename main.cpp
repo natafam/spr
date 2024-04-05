@@ -129,7 +129,7 @@ int main() {
     
     double miejsceZero = miejsceZeroweMetodaPolowienia(poczatkowyPunktPrzedzialu, koncowyPunktPrzedziału, dokladnosc);
     if (miejsceZero != -1)
-        cout << "Miejsce zerowe: " << miejsceZero << endl;
+        cout << "Miejsce zerowe: " << miejsceZero << "\n\n-----\n" << endl;
 
     // 2. Obliczanie pierwiastka kwadratowego metodą Herona.
     int pierwiastek = 16;
