@@ -123,7 +123,7 @@ void wypiszElementyListy(const list<int>& lista) {
 
 int main() {
     // 1. Wyznaczanie miejsc zerowych funkcji metodą połowienia.
-    double poczatkowyPunktPrzedzialu = -2;
+    double poczatkowyPunktPrzedzialu = 0;
     double koncowyPunktPrzedziału = 5;
     double dokladnosc = 0.0001;
     
