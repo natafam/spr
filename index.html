@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zmiana zdjęć i tekstu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #content {
+            display: flex;
+            justify-content: space-between;
+        }
+        #images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+        }
+        #info {
+            margin-left: 20px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Wybierz państwo</h1>
+<form id="countryForm">
+    <label>
+        <input type="radio" name="country" value="polska" checked> Polska
+    </label>
+    <label>
+        <input type="radio" name="country" value="niemcy"> Niemcy
+    </label>
+    <label>
+        <input type="radio" name="country" value="francja"> Francja
+    </label>
+</form>
+
+<div id="content">
+    <div id="images">
+        <img id="flag" src="https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg" alt="Flaga Polski">
+        <img id="landscape" src="https://upload.wikimedia.org/wikipedia/commons/1/12/Poland_landscape.jpg" alt="Krajobraz Polski">
+    </div>
+    <div id="info">
+        <p id="countryInfo">Polska to kraj w Europie Środkowej, znany ze swojej bogatej historii i kultury.</p>
+    </div>
+</div>
+
+<script>
+    const countryForm = document.getElementById('countryForm');
+    const flagImg = document.getElementById('flag');
+    const landscapeImg = document.getElementById('landscape');
+    const countryInfo = document.getElementById('countryInfo');
+
+    const countries = {
+        polska: {
+            flag: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_Poland.svg',
+            landscape: 'https://upload.wikimedia.org/wikipedia/commons/1/12/Poland_landscape.jpg',
+            info: 'Polska to kraj w Europie Środkowej, znany ze swojej bogatej historii i kultury.'
+        },
+        niemcy: {
+            flag: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg',
+            landscape: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Germany_landscape.jpg',
+            info: 'Niemcy to kraj w Europie Środkowej, znany z nowoczesnej architektury i technologii.'
+        },
+        francja: {
+            flag: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg',
+            landscape: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/France_landscape.jpg',
+            info: 'Francja to kraj znany ze swojej kultury, sztuki i kuchni.'
+        }
+    };
+
+    countryForm.addEventListener('change', (event) => {
+        const country = event.target.value;
+        flagImg.src = countries[country].flag;
+        landscapeImg.src = countries[country].landscape;
+        countryInfo.textContent = countries[country].info;
+    });
+</script>
+
+</body>
+</html>
