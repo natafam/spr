@@ -1,0 +1,45 @@
+package com.example.sprawdzian;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.CheckBox;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    private RadioGroup radioGroup;
+    private int points = 0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void onClick(View view) {
+        radioGroup = findViewById(R.id.radioGroup);
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+        RadioButton selectedRadioButton = findViewById(selectedId);
+
+        if (selectedRadioButton != null) {
+            switch (selectedId) {
+                case R.id.radioButtonPlus1:
+                    points += 1;
+                    break;
+                case R.id.radioButtonPlus2:
+                    points += 2;
+                    break;
+                case R.id.radioButtonMinus1:
+                    points -= 1;
+                    break;
+            }
+
+            Toast.makeText(this, "Aktualna punktacja: " + points, Toast.LENGTH_SHORT).show();
+        }
+    }
+}

@@ -1,0 +1,2 @@
+Dodatkowa linijka dodana do Gradle Scripts gradle.properties:
+android.nonFinalResIds=false

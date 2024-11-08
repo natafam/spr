@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sprawdzian</string>
+    <string-array name="options">
+        <item>kwaśny</item>
+        <item>słodki</item>
+        <item>słony</item>
+        <item>gorzki</item>
+    </string-array>
+</resources>

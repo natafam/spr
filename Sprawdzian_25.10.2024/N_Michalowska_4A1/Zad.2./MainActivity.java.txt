@@ -1,0 +1,43 @@
+package com.example.sprawdzian;
+
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.CheckBox;
+
+public class MainActivity extends AppCompatActivity {
+
+    private CheckBox checkboxSugar, checkboxLemon, checkboxMilk, checkboxHoney;
+    private TextView resultTextView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        checkboxSugar = findViewById(R.id.checkboxSugar);
+        checkboxLemon = findViewById(R.id.checkboxLemon);
+        checkboxMilk = findViewById(R.id.checkboxMilk);
+        checkboxHoney = findViewById(R.id.checkboxHoney);
+        resultTextView = findViewById(R.id.resultTextView);
+    }
+
+    public void Wyswietl(View view) {
+        StringBuilder preferences = new StringBuilder("Lubisz herbatę z: ");
+
+        if (checkboxSugar.isChecked()) {
+            preferences.append("cukrem, ");
+        }
+        if (checkboxLemon.isChecked()) {
+            preferences.append("cytryną, ");
+        }
+        if (checkboxMilk.isChecked()) {
+            preferences.append("mlekiem, ");
+        }
+        if (checkboxHoney.isChecked()) {
+            preferences.append("miodem, ");
+        }
+        resultTextView.setText(preferences.toString());
+    }
+}
